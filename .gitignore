@@ -1,0 +1,37 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Rust specific
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build output
+/target/
+**/target/
+
+# Environment variables
+.env
+
+# Debug files
+*.dSYM/
+
+# Executables
+**/*.dylib
+**/*.so
+**/*.dll
+
+# Backups
+*~
+*.bak
+*.swp
+*#.n#*
+.#*
