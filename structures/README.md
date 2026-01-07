@@ -132,6 +132,64 @@ You add traits to your types with `impl` or `#[derive()]`.
 
 **Rule of thumb**: Always derive `Debug`, implement `Display` only when needed for user-facing output.
 
+## Rust vs JavaScript/TypeScript Classes
+
+**No, Rust does not have classes.** Rust uses structs instead, which are similar but safer and more explicit.
+
+### Similarities:
+- Both bundle data together
+- Both can have methods
+- Both are blueprints for creating instances
+
+### Key Differences:
+
+#### 1. No Inheritance in Rust
+```javascript
+// JavaScript - has inheritance
+class Animal { }
+class Dog extends Animal { }
+```
+
+```rust
+// Rust - no inheritance, uses traits instead
+struct Animal { }
+struct Dog { }
+trait CanBark { }
+impl CanBark for Dog { }
+```
+
+#### 2. Rust is More Explicit
+```javascript
+// JavaScript - dynamic, flexible
+class Person {
+    constructor(name) {
+        this.name = name;  // can add properties anytime
+    }
+}
+```
+
+```rust
+// Rust - explicit, fixed structure
+struct Person {
+    name: String,  // fields defined at compile time
+}
+```
+
+#### 3. Rust Has Better Safety
+- **JavaScript**: Can add/remove properties at runtime
+- **Rust**: Structure is fixed, compile-time checked
+
+### Quick Comparison:
+| Feature | JavaScript Classes | Rust Structs |
+|---------|-------------------|---------------|
+| Data + Methods | ✅ | ✅ |
+| Inheritance | ✅ | ❌ (uses traits) |
+| Dynamic Properties | ✅ | ❌ (fixed at compile) |
+| Privacy | Optional | Built-in (pub/private) |
+| Type Safety | Runtime | Compile-time |
+
+**Bottom line**: Rust structs are like safer, more explicit versions of classes without the complexity of inheritance. Rust separates data (structs) from behavior (traits) for better safety and flexibility.
+
 ## When to Use Each Type
 
 | Situation | Best Choice | Why |
